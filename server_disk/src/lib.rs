@@ -40,7 +40,14 @@ pub mod my_server_disk {
                 let line = line.trim();
                 let line = line.split_whitespace().collect::<Vec<&str>>();
                 if line[5] == "/"{
-                    over_threadhold_server.total = line[3].replace("Gi", "").replace("Ki", "").replace("Mi", "").replace("Bi", "").parse::<i32>().unwrap();
+                    over_threadhold_server.total = line[3]
+                        .replace("Gi", "")
+                        .replace("Ki", "")
+                        .replace("Mi", "")
+                        .replace("Bi", "")
+                        .replace("G", "")
+                        .replace("M", "")
+                        .parse::<i32>().unwrap();
                     over_threadhold_server.used = line[4].replace("%", "").parse::<i32>().unwrap();
                     over_threadhold_server.hostname = hostname::get().unwrap().into_string().unwrap();
                     over_threadhold_server.filesystem = line[0].to_string();
