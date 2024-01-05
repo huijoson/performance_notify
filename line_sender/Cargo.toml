@@ -1,0 +1,15 @@
+[package]
+name = "line_sender"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+actix-web = "4.4.1"
+serde = { version = "1.0.193", features = ["derive"] }
+serde_json = "1.0.108"
+reqwest = {version = "0.11.23", features = ["json"]}
+rstest = { version = "0.18.2"}
+server_disk = { path = "../server_disk" }
+tokio = { version = "1.12.0", features = ["full"] }
