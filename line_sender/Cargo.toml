@@ -11,5 +11,7 @@ serde = { version = "1.0.193", features = ["derive"] }
 serde_json = "1.0.108"
 reqwest = {version = "0.11.23", features = ["json"]}
 rstest = { version = "0.18.2"}
-server_disk = { path = "../server_disk" }
+server_disk = { path = "../info_sender/server_disk" }
 tokio = { version = "1.12.0", features = ["full"] }
+dotenv = "0.15.0"
+dotenv_codegen = "0.15.0"
